@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamboli Hassan | Full Stack Developer & Designer</title>
+    <link rel="stylesheet" href="portfolio-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&family=Space+Mono:wght@400;700&family=Playfair+Display:wght@700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="theme-red">
+    <!-- -------------------------- Navigation Sidebar  ---------------------------->
+    <div class="sidebar">
+        <div class="logo">
+            <span class="logo-main">MH</span>
+            <span class="logo-sub">CODER</span>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="#home" class="nav-link active">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#about" class="nav-link">
+                <i class="fas fa-user"></i>
+                <span>About</span>
+            </a>
+            <a href="#skills" class="nav-link">
+                <i class="fas fa-code"></i>
+                <span>Skills</span>
+            </a>
+            <a href="#projects" class="nav-link">
+                <i class="fas fa-briefcase"></i>
+                <span>Projects</span>
+            </a>
+            <a href="#contact" class="nav-link">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="theme-controls">
+                
+                <div class="color-palette">
+
+                    <button class="mode-toggle" id="modeToggle" title="Dark/Light Mode">
+                         <i class="fas fa-moon"></i>
+                    </button>
+                    
+                    <button class="color-btn active" data-color="red" title="Red">
+                        <div class="color-dot" style="background: #ff4444;"></div>
+                    </button>
+                    <button class="color-btn" data-color="blue" title="Blue">
+                        <div class="color-dot" style="background: #0066ff;"></div>
+                    </button>
+                    <button class="color-btn" data-color="green" title="Green">
+                        <div class="color-dot" style="background: #00d084;"></div>
+                    </button>
+                    <button class="color-btn" data-color="purple" title="Purple">
+                        <div class="color-dot" style="background: #9d4edd;"></div>
+                    </button>
+                    <button class="color-btn" data-color="orange" title="Orange">
+                        <div class="color-dot" style="background: #ff8c42;"></div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://github.com/TamboliHassan827" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/mr-tamboli-hasan-19a152401/" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://instagram.com/mr.tambolihasan827" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/TamboliHasan827" target="_blank" title="Twitter">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- -------------------------- Main Content  ---------------------------->
+
+    <main class="main-content">
+        <!-- HOME SECTION -->
+        <section id="home" class="section home-section">
+            <div class="section-wrapper">
+                <div class="home-grid">
+                    <div class="content-left">
+                        <div class="greeting-text">
+                            <h1 class="greeting">
+                                <span class="hi-text">Hello, I'm</span>
+                                <span class="name-text">Tamboli Hassan</span>
+                            </h1>
+                        </div>
+                       
+                        <div class="role-section">
+                            <span class="role-prefix">I'm a  </span>
+                            <div class="typing-container">
+                                <span class="typing-text" id="typingText"></span>
+                                <span class="typing-cursor"></span>
+                            </div>  
+                        </div>
+
+
+                        <p class="intro-text">
+                            "I don't just code—I create solutions that change how people interact with technology. <br>
+                            Full-stack developer building products with purpose."
+                        </p>
+
+                        <div class="cta-group">
+                            <a href="#projects" class="btn-primary">View My Work</a>
+                            <!--<a href="#contact" class="btn-secondary">Get In Touch</a>-->
+                            <a href="TamboliHRResume.pdf" target="_blank" onclick="downloadCV()" class="btn-primary">Download CV</a>
+                        </div>
+
+                        <div class="scroll-hint">
+                            <span>Scroll to explore</span>
+                            <i class="fas fa-arrow-down"></i>
+                        </div>
+                    </div>
+
+                    <div class="content-right">
+                        <div class="image-showcase">
+                            <div class="rotating-circle"></div>
+                            <img src="TH.png" alt="Tamboli Hassan" class="profile-img">
+                            <div class="glow-effect"></div>
+                        </div>
+                    </div>
+                </div>  
+            </div>
+        </section>
+
+
+        <!-- ------------------------------------ABOUT SECTION ---------------------------------------------->
+
+
+        <section id="about" class="section about-section">
+            <div class="section-wrapper">
+                <h2 class="section-title">About Me</h2>
+                
+                <div class="about-grid">
+                    <div class="about-text-block">
+                        <p>
+                            I'm a passionate full-stack developer and web designer from Maharashtra, India. 
+                            With a strong foundation in modern web technologies, I love turning ideas into elegant digital solutions.
+                        </p>
+                        <p>
+                            My journey in tech started with curiosity, evolved into expertise, and continues to be driven by the desire 
+                            to create meaningful digital experiences. I believe in clean code, user-centered design, and continuous learning.
+                        </p>
+                        <p>
+                            When I'm not coding or designing, you can find me creating content for my tech community, 
+                            exploring new technologies, or sharing knowledge with aspiring developers.
+                        </p>
+
+                        <div class="stats-group">
+                            <div class="stat-item">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-label">Projects</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">Dedication</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">24/7</div>
+                                <div class="stat-label">Passion</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="highlights-grid">
+                        <div class="highlight-card">
+                            <div class="highlight-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <h3>Creative Solutions</h3>
+                            <p>Fresh perspective with innovative solutions for every project</p>
+                        </div>
+                        <div class="highlight-card">
+                            <div class="highlight-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3>Responsive Design</h3>
+                            <p>Perfect on all devices with beautiful, functional interfaces</p>
+                        </div>
+                        <div class="highlight-card">
+                            <div class="highlight-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h3>High Performance</h3>
+                            <p>Optimized, fast-loading websites with excellent UX</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--  -------------------------- -------SKILLS SECTION ---------- -------------------------------->
+
+
+        <section id="skills" class="section skills-section">
+            <div class="section-wrapper">
+                <h2 class="section-title">Skills & Technologies</h2>
+
+                <div class="skills-container">
+                    <div class="skill-group">
+                        <h3 class="skill-category">Frontend</h3>
+                        <div class="skill-list">
+                            <span class="skill-badge">HTML5</span>
+                            <span class="skill-badge">CSS3</span>
+                            <span class="skill-badge">JavaScript</span>
+                            <span class="skill-badge">React</span>
+                            <span class="skill-badge">Responsive</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h3 class="skill-category">Backend</h3>
+                        <div class="skill-list">
+                            <span class="skill-badge">Node.js</span>
+                            <span class="skill-badge">Express</span>
+                            <span class="skill-badge">MongoDB</span>
+                            <span class="skill-badge">REST APIs</span>
+                            <span class="skill-badge">Databases</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h3 class="skill-category">Design & Tools</h3>
+                        <div class="skill-list">
+                            <span class="skill-badge">Figma</span>
+                            <span class="skill-badge">UI/UX</span>
+                            <span class="skill-badge">Adobe XD</span>
+                            <span class="skill-badge">Git</span>
+                            <span class="skill-badge">Video Edit</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h3 class="skill-category">Soft Skills</h3>
+                        <div class="skill-list">
+                            <span class="skill-badge">Problem Solving</span>
+                            <span class="skill-badge">Communication</span>
+                            <span class="skill-badge">Team Work</span>
+                            <span class="skill-badge">Leadership</span>
+                            <span class="skill-badge">Learning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- -------------------------- PROJECTS SECTION  ---------------------------->
+
+
+        <section id="projects" class="section projects-section">
+            <div class="section-wrapper">
+                <h2 class="section-title">Featured Projects</h2>
+
+                <div class="projects-grid">
+                    <div class="project-item">
+                        <div class="project-img-box">
+                            <div class="project-placeholder">E-Commerce</div>
+                            <div class="project-hover">
+                                <a href="#" class="hover-btn">View Project</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>E-Commerce Platform</h3>
+                            <p>Full-stack e-commerce solution with React, Node.js, and MongoDB</p>
+                            <div class="project-tags">
+                                <span>React</span>
+                                <span>Node.js</span>
+                                <span>MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-img-box">
+                            <div class="project-placeholder">Task Manager</div>
+                            <div class="project-hover">
+                                <a href="#" class="hover-btn">View Project</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Task Management App</h3>
+                            <p>Interactive app with drag-drop, real-time updates, and beautiful UI</p>
+                            <div class="project-tags">
+                                <span>JavaScript</span>
+                                <span>HTML/CSS</span>
+                                <span>Firebase</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-img-box">
+                            <div class="project-placeholder">Portfolio</div>
+                            <div class="project-hover">
+                                <a href="#" class="hover-btn">View Project</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Portfolio Website</h3>
+                            <p>Modern portfolio with dark mode, animations, and optimized performance</p>
+                            <div class="project-tags">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-img-box">
+                            <div class="project-placeholder">Chat App</div>
+                            <div class="project-hover">
+                                <a href="#" class="hover-btn">View Project</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Real-Time Chat App</h3>
+                            <p>Real-time messaging with WebSocket, auth, and elegant UI design</p>
+                            <div class="project-tags">
+                                <span>Socket.io</span>
+                                <span>Node.js</span>
+                                <span>React</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-img-box">
+                            <div class="project-placeholder">Weather App</div>
+                            <div class="project-hover">
+                                <a href="#" class="hover-btn">View Project</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Weather Forecast App</h3>
+                            <p>Beautiful weather app with API integration and responsive design</p>
+                            <div class="project-tags">
+                                <span>API</span>
+                                <span>React</span>
+                                <span>Responsive</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                        <div class="project-img-box">
+                            <div class="project-placeholder">Blog Platform</div>
+                            <div class="project-hover">
+                                <a href="#" class="hover-btn">View Project</a>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Blog Platform</h3>
+                            <p>Full-stack blogging platform with markdown, comments, and categories</p>
+                            <div class="project-tags">
+                                <span>MERN</span>
+                                <span>Markdown</span>
+                                <span>Auth</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- -------------------------- CONTACT SECTION  ---------------------------->
+
+
+        <section id="contact" class="section contact-section">
+            <div class="section-wrapper">
+                <h2 class="section-title">Get In Touch</h2>
+
+                <div class="contact-container">
+                    <div class="contact-info-block">
+                        <p class="contact-intro">Let's work together to create something amazing</p>
+                        
+                        <div class="contact-links">
+                            <a href="mailto:hasantamboli2005@gmail.com" class="contact-link">
+                                <i class="fas fa-envelope"></i>
+                                <span>Send me an email</span>
+                            </a>
+
+                            <a href="https://wa.me/919322534063" target="_blank" class="contact-link" title="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                                 <span>Message on WhatsApp</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/mr-tamboli-hasan-19a152401/" target="_blank" class="contact-link">
+                                <i class="fab fa-linkedin"></i>
+                                <span>Connect on LinkedIn</span>
+                            </a>
+                            <a href="https://instagram.com/mr.tambolihasan827" target="_blank" class="contact-link">
+                                <i class="fab fa-instagram"></i>
+                                <span>Follow on Instagram</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <form action="https://formspree.io/f/xeenwpwd" method="POST" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- -------------------------- Footer  ---------------------------->
+
+
+    <footer class="footer">
+        <p>&copy; 2024 Tamboli Hassan. Made with <i class="fas fa-heart"></i> | Designed & Developed by <span style="font-weight: 700; color: var(--primary-color);">MH_CODER</span></p>
+    </footer>
+
+    <script src="portfolio-script.js"></script>
+</body>
+</html>
