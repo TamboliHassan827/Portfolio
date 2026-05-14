@@ -6,6 +6,42 @@ const modeToggle = document.getElementById('modeToggle');
 const body = document.body;
 const savedMode = localStorage.getItem('theme-mode') || 'light';
 
+// ========================================
+// MOBILE HAMBURGER MENU TOGGLE
+// ========================================
+
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const sidebar = document.getElementById('sidebar');
+const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+function openSidebar() {
+    sidebar.classList.add('active');
+    sidebarOverlay.classList.add('active');
+    hamburgerBtn.classList.add('open');
+    body.style.overflow = 'hidden';
+}
+
+function closeSidebar() {
+    sidebar.classList.remove('active');
+    sidebarOverlay.classList.remove('active');
+    hamburgerBtn.classList.remove('open');
+    body.style.overflow = '';
+}
+
+if (hamburgerBtn) {
+    hamburgerBtn.addEventListener('click', () => {
+        if (sidebar.classList.contains('active')) {
+            closeSidebar();
+        } else {
+            openSidebar();
+        }
+    });
+}
+
+if (sidebarOverlay) {
+    sidebarOverlay.addEventListener('click', closeSidebar);
+}
+
 // Initialize theme
 if (savedMode === 'dark') {
     body.classList.add('dark-mode');
@@ -119,6 +155,11 @@ navLinks.forEach(link => {
         
         if (targetSection) {
             targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Mobile pe sidebar band karo nav link click ke baad
+        if (window.innerWidth <= 768) {
+            closeSidebar();
         }
     });
 });
