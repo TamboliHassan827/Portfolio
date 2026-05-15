@@ -357,6 +357,7 @@ body {
 .home-section {
     background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
     min-height: 100vh;
+    padding: 4rem 0;
 }
 
 .home-grid {
@@ -575,17 +576,6 @@ body {
     align-items: center;
     gap: 1.5rem;
     animation: slideInRight 0.8s ease forwards;
-}
-
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
 }
 
 .image-showcase {
@@ -1155,6 +1145,16 @@ body {
 }
 
 @media (max-width: 768px) {
+    .section {
+        padding: 2rem 0 !important;
+        min-height: auto !important;
+    }
+
+    .home-section {
+        min-height: auto !important;
+        padding: 2rem 0 !important;
+    }
+
     .hamburger-btn {
         display: flex;
     }
@@ -1249,9 +1249,42 @@ body {
     .section-wrapper {
         padding: 0 1.5rem;
     }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .intro-text {
+        margin: 1rem 0;
+        max-width: 100%;
+    }
+
+    .image-showcase {
+        width: 280px;
+        height: 280px;
+        margin-top: 0;
+    }
+
+    .about-grid,
+    .contact-container {
+        gap: 1.5rem;
+    }
 }
 
 @media (max-width: 600px) {
+    .section {
+        padding: 1.5rem 0 !important;
+    }
+
+    .home-section {
+        padding: 1.5rem 0 !important;
+    }
+
+    .home-grid {
+        gap: 2rem;
+    }
+
     .sidebar {
         width: 260px;
     }
@@ -1262,16 +1295,19 @@ body {
 
     .greeting {
         font-size: 1.75rem;
+        margin-bottom: 1rem;
     }
 
     .section-title {
         font-size: 1.75rem;
+        margin-bottom: 1.25rem;
     }
 
     .role-section {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5rem;
+        margin: 0.5rem 0;
     }
 
     .dynamic-roles {
@@ -1281,38 +1317,125 @@ body {
     .image-showcase {
         width: 240px;
         height: 240px;
-        margin-top: -50px;
+        margin-top: 0;
     }
 
     .stats-group {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
     .color-palette {
         width: 100%;
     }
-}
 
-@media (max-width: 480px) {
-    .section {
-        padding: 2rem 0;
+    .intro-text {
+        font-size: 1rem;
+        margin: 0.75rem 0;
+    }
+
+    .cta-group {
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .about-text-block p {
+        margin-bottom: 1rem;
     }
 
     .section-wrapper {
         padding: 0 1rem;
     }
+}
+
+@media (max-width: 480px) {
+    .section {
+        padding: 1.25rem 0 !important;
+        min-height: auto !important;
+    }
+
+    .home-section {
+        padding: 1.25rem 0 !important;
+    }
+
+    .home-grid {
+        gap: 1.5rem;
+    }
+
+    .section-wrapper {
+        padding: 0 0.75rem;
+    }
 
     .greeting {
         font-size: 1.5rem;
+        margin-bottom: 0.75rem;
     }
 
     .role-prefix {
         font-size: 1.1rem;
     }
 
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
     .image-showcase {
         width: 200px;
         height: 200px;
-        margin-top: -30px;
+        margin-top: 0;
+    }
+
+    .hi-text {
+        font-size: 1.2rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .intro-text {
+        font-size: 0.95rem;
+        margin: 0.5rem 0;
+    }
+
+    .cta-group {
+        gap: 0.75rem;
+        margin-top: 1rem;
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .scroll-hint {
+        font-size: 0.85rem;
+        margin-top: 1rem;
+    }
+
+    .stat-item {
+        padding: 1.5rem 1rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .about-text-block p {
+        font-size: 0.95rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .contact-link {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .contact-form {
+        gap: 1rem;
+    }
+
+    .form-group {
+        margin-bottom: 0.5rem;
     }
 }
