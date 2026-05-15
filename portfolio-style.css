@@ -104,6 +104,9 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
     overflow-x: hidden;
     touch-action: auto;
+    -webkit-user-select: auto;
+    user-select: auto;
+    -webkit-touch-callout: auto;
 }
 
 /* ================================
@@ -178,6 +181,8 @@ body {
     position: relative;
     overflow: hidden;
     touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
 }
 
 .nav-link::before {
@@ -320,14 +325,17 @@ body {
 .main-content {
     margin-left: 280px;
     min-height: 100vh;
+    pointer-events: auto;
 }
 
 .section {
-    min-height: 100vh;
+    min-height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 4rem 0;
+    pointer-events: auto;
+    touch-action: auto;
 }
 
 .section-wrapper {
@@ -335,6 +343,7 @@ body {
     max-width: 1300px;
     padding: 0 3rem;
     margin: 0 auto;
+    pointer-events: auto;
 }
 
 .section-title {
@@ -356,8 +365,8 @@ body {
 
 .home-section {
     background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-    min-height: 100vh;
-    padding: 4rem 0;
+    min-height: auto;
+    padding: 2rem 0 3rem 0 !important;
 }
 
 .home-grid {
@@ -524,6 +533,7 @@ body {
     position: relative;
     overflow: hidden;
     touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .btn-primary {
@@ -1070,6 +1080,11 @@ body {
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
     transition: all 0.3s ease;
     touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.hamburger-btn:active {
+    opacity: 0.8;
 }
 
 .hamburger-btn span {
@@ -1104,10 +1119,12 @@ body {
     opacity: 0;
     transition: opacity 0.3s ease;
     backdrop-filter: blur(2px);
+    pointer-events: none;
 }
 
 .sidebar-overlay.active {
     opacity: 1;
+    pointer-events: auto;
 }
 
 /* ================================
