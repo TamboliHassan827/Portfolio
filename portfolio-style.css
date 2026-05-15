@@ -135,7 +135,8 @@ body {
 .logo-main {
     font-size: 3.5rem;
     font-weight: 900;
-    font-family: Monotype Corsiva;
+  /*font-family: Monotype Corsiva;*/
+    font-family: "Charm", cursive;
     background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
