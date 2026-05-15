@@ -36,10 +36,26 @@ if (hamburgerBtn) {
             openSidebar();
         }
     });
+
+    // Touch support for hamburger
+    hamburgerBtn.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        if (sidebar.classList.contains('active')) {
+            closeSidebar();
+        } else {
+            openSidebar();
+        }
+    });
 }
 
 if (sidebarOverlay) {
     sidebarOverlay.addEventListener('click', closeSidebar);
+    
+    // Touch support for overlay
+    sidebarOverlay.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        closeSidebar();
+    });
 }
 
 // Initialize theme
@@ -49,6 +65,15 @@ if (savedMode === 'dark') {
 }
 
 modeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    const isDarkMode = body.classList.contains('dark-mode');
+    localStorage.setItem('theme-mode', isDarkMode ? 'dark' : 'light');
+    updateModeIcon();
+});
+
+// Touch support for mode toggle
+modeToggle.addEventListener('touchend', (e) => {
+    e.preventDefault();
     body.classList.toggle('dark-mode');
     const isDarkMode = body.classList.contains('dark-mode');
     localStorage.setItem('theme-mode', isDarkMode ? 'dark' : 'light');
@@ -94,6 +119,23 @@ colorButtons.forEach(btn => {
         localStorage.setItem('theme-color', color);
         updateColorButtons();
     });
+
+    // Touch support for color buttons
+    btn.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        const color = btn.getAttribute('data-color');
+        
+        // Remove all theme classes
+        body.classList.remove('theme-red', 'theme-blue', 'theme-green', 'theme-purple', 'theme-orange');
+        
+        // Add new theme (skip red as it's default)
+        if (color !== 'red') {
+            body.classList.add(`theme-${color}`);
+        }
+        
+        localStorage.setItem('theme-color', color);
+        updateColorButtons();
+    });
 });
 
 function updateColorButtons() {
@@ -108,7 +150,6 @@ function updateColorButtons() {
 // ========================================
 // DOWNLOAD CV
 // ========================================
-
 
 function downloadCV() {
   const link = document.createElement('a');
@@ -149,6 +190,22 @@ window.addEventListener('scroll', updateActiveLink);
 // Smooth scroll on link click
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').slice(1);
+        const targetSection = document.getElementById(targetId);
+        
+        if (targetSection) {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Mobile pe sidebar band karo nav link click ke baad
+        if (window.innerWidth <= 768) {
+            closeSidebar();
+        }
+    });
+
+    // Touch support for nav links
+    link.addEventListener('touchend', (e) => {
         e.preventDefault();
         const targetId = link.getAttribute('href').slice(1);
         const targetSection = document.getElementById(targetId);
@@ -241,7 +298,6 @@ function showAlert(message, type) {
     }, 3000);
 }
 
-
 // ==========================================================================================================
 // TYPING EFFECT WITH BACKSPACE
 // =========================================================================================================
@@ -253,7 +309,6 @@ const typingRoles = [
     'Creative Coder',
     'Problem Solver'
 ];
-
 
 let currentRoleIndex = 0;
 let currentCharIndex = 0;
@@ -295,8 +350,6 @@ function typeRole() {
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(typeRole, 500);
 });
-
-
 
 // =========================================================================================================
 // KEYBOARD SHORTCUTS
@@ -398,3 +451,10 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// =========================================================================================================
+// PREVENT DEFAULT TOUCH DELAYS
+// =========================================================================================================
+
+// Ensure all clickable elements respond to touch immediately
+document.addEventListener('touchstart', function() {}, false);
