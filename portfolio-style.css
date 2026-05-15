@@ -103,10 +103,6 @@ body {
     color: var(--text-primary);
     transition: background-color 0.3s ease, color 0.3s ease;
     overflow-x: hidden;
-    touch-action: auto;
-    -webkit-user-select: auto;
-    user-select: auto;
-    -webkit-touch-callout: auto;
 }
 
 /* ================================
@@ -180,9 +176,7 @@ body {
     font-weight: bold;
     position: relative;
     overflow: hidden;
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
-    cursor: pointer;
+    /*box-shadow: 5px 0px 20px var(--primary-color);*/
 }
 
 .nav-link::before {
@@ -244,7 +238,6 @@ body {
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    touch-action: manipulation;
 }
 
 .mode-toggle:hover {
@@ -271,7 +264,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    touch-action: manipulation;
 }
 
 .color-dot {
@@ -308,7 +300,6 @@ body {
     transition: all 0.3s ease;
     border: 2px solid var(--border-color);
     font-size: 1.1rem;
-    touch-action: manipulation;
 }
 
 .social-links a:hover {
@@ -325,17 +316,14 @@ body {
 .main-content {
     margin-left: 280px;
     min-height: 100vh;
-    pointer-events: auto;
 }
 
 .section {
-    min-height: auto;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 4rem 0;
-    pointer-events: auto;
-    touch-action: auto;
 }
 
 .section-wrapper {
@@ -343,7 +331,6 @@ body {
     max-width: 1300px;
     padding: 0 3rem;
     margin: 0 auto;
-    pointer-events: auto;
 }
 
 .section-title {
@@ -365,8 +352,7 @@ body {
 
 .home-section {
     background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
-    min-height: auto;
-    padding: 2rem 0 3rem 0 !important;
+    min-height: 100vh;
 }
 
 .home-grid {
@@ -532,8 +518,6 @@ body {
     justify-content: center;
     position: relative;
     overflow: hidden;
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
 }
 
 .btn-primary {
@@ -586,6 +570,17 @@ body {
     align-items: center;
     gap: 1.5rem;
     animation: slideInRight 0.8s ease forwards;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 .image-showcase {
@@ -893,7 +888,6 @@ body {
     border-radius: 25px;
     font-weight: 700;
     transition: all 0.3s ease;
-    touch-action: manipulation;
 }
 
 .hover-btn:hover {
@@ -972,7 +966,6 @@ body {
     color: var(--text-primary);
     transition: all 0.3s ease;
     border: 2px solid var(--border-color);
-    touch-action: manipulation;
 }
 
 .contact-link:hover {
@@ -1007,7 +1000,6 @@ body {
     color: var(--text-primary);
     font-size: 1rem;
     transition: all 0.3s ease;
-    touch-action: auto;
 }
 
 .contact-form input:focus,
@@ -1029,7 +1021,6 @@ body {
     transition: all 0.3s ease;
     font-family: var(--font-title);
     margin-top: 0.5rem;
-    touch-action: manipulation;
 }
 
 .btn-submit:hover {
@@ -1079,12 +1070,6 @@ body {
     padding: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
     transition: all 0.3s ease;
-    touch-action: manipulation;
-    -webkit-tap-highlight-color: transparent;
-}
-
-.hamburger-btn:active {
-    opacity: 0.8;
 }
 
 .hamburger-btn span {
@@ -1119,12 +1104,10 @@ body {
     opacity: 0;
     transition: opacity 0.3s ease;
     backdrop-filter: blur(2px);
-    pointer-events: none;
 }
 
 .sidebar-overlay.active {
     opacity: 1;
-    pointer-events: auto;
 }
 
 /* ================================
@@ -1162,16 +1145,6 @@ body {
 }
 
 @media (max-width: 768px) {
-    .section {
-        padding: 2rem 0 !important;
-        min-height: auto !important;
-    }
-
-    .home-section {
-        min-height: auto !important;
-        padding: 2rem 0 !important;
-    }
-
     .hamburger-btn {
         display: flex;
     }
@@ -1266,42 +1239,9 @@ body {
     .section-wrapper {
         padding: 0 1.5rem;
     }
-
-    .section-title {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .intro-text {
-        margin: 1rem 0;
-        max-width: 100%;
-    }
-
-    .image-showcase {
-        width: 280px;
-        height: 280px;
-        margin-top: 0;
-    }
-
-    .about-grid,
-    .contact-container {
-        gap: 1.5rem;
-    }
 }
 
 @media (max-width: 600px) {
-    .section {
-        padding: 1.5rem 0 !important;
-    }
-
-    .home-section {
-        padding: 1.5rem 0 !important;
-    }
-
-    .home-grid {
-        gap: 2rem;
-    }
-
     .sidebar {
         width: 260px;
     }
@@ -1312,19 +1252,16 @@ body {
 
     .greeting {
         font-size: 1.75rem;
-        margin-bottom: 1rem;
     }
 
     .section-title {
         font-size: 1.75rem;
-        margin-bottom: 1.25rem;
     }
 
     .role-section {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5rem;
-        margin: 0.5rem 0;
     }
 
     .dynamic-roles {
@@ -1334,125 +1271,90 @@ body {
     .image-showcase {
         width: 240px;
         height: 240px;
-        margin-top: 0;
+        margin-top: -50px;
     }
 
     .stats-group {
         grid-template-columns: 1fr;
-        gap: 1rem;
     }
 
     .color-palette {
         width: 100%;
     }
+}
 
-    .intro-text {
-        font-size: 1rem;
-        margin: 0.75rem 0;
-    }
-
-    .cta-group {
-        gap: 1rem;
-        margin-top: 1.5rem;
-    }
-
-    .about-text-block p {
-        margin-bottom: 1rem;
+@media (max-width: 480px) {
+    .section {
+        padding: 2rem 0;
     }
 
     .section-wrapper {
         padding: 0 1rem;
     }
-}
-
-@media (max-width: 480px) {
-    .section {
-        padding: 1.25rem 0 !important;
-        min-height: auto !important;
-    }
-
-    .home-section {
-        padding: 1.25rem 0 !important;
-    }
-
-    .home-grid {
-        gap: 1.5rem;
-    }
-
-    .section-wrapper {
-        padding: 0 0.75rem;
-    }
 
     .greeting {
         font-size: 1.5rem;
-        margin-bottom: 0.75rem;
     }
 
     .role-prefix {
         font-size: 1.1rem;
     }
 
-    .section-title {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
-
     .image-showcase {
         width: 200px;
         height: 200px;
-        margin-top: 0;
+        margin-top: -30px;
     }
+}
+/* ============================================
+   QUICK FIX - TOUCH + SPACE ISSUE ONLY
+   ============================================ */
 
-    .hi-text {
-        font-size: 1.2rem;
-        margin-bottom: 0.25rem;
-    }
+/* FIX 1: Sidebar Overlay - Touch ko block mat karo */
+.sidebar-overlay {
+    pointer-events: none !important;
+}
 
-    .intro-text {
-        font-size: 0.95rem;
-        margin: 0.5rem 0;
-    }
+.sidebar-overlay.active {
+    pointer-events: auto !important;
+}
 
-    .cta-group {
-        gap: 0.75rem;
-        margin-top: 1rem;
-        flex-direction: column;
-    }
+/* FIX 2: Section spacing - Bahut space mat dena */
+.section {
+    padding: 2rem 0 !important;
+}
 
-    .btn-primary,
-    .btn-secondary {
-        padding: 0.75rem 1.5rem;
-        font-size: 0.9rem;
-    }
+.home-section {
+    padding: 2rem 0 !important;
+}
 
-    .scroll-hint {
-        font-size: 0.85rem;
-        margin-top: 1rem;
+/* Mobile pe aur kam space */
+@media (max-width: 768px) {
+    .section {
+        padding: 1.5rem 0 !important;
     }
+    
+    .home-section {
+        padding: 1.5rem 0 !important;
+    }
+}
 
-    .stat-item {
-        padding: 1.5rem 1rem;
+@media (max-width: 600px) {
+    .section {
+        padding: 1.25rem 0 !important;
     }
+    
+    .home-section {
+        padding: 1.25rem 0 !important;
+    }
+}
 
-    .stat-number {
-        font-size: 2rem;
-    }
+/* FIX 3: Touch ko responsive banao */
+* {
+    touch-action: auto !important;
+}
 
-    .about-text-block p {
-        font-size: 0.95rem;
-        margin-bottom: 0.75rem;
-    }
-
-    .contact-link {
-        padding: 1rem;
-        gap: 1rem;
-    }
-
-    .contact-form {
-        gap: 1rem;
-    }
-
-    .form-group {
-        margin-bottom: 0.5rem;
-    }
+button, a, input, textarea, [onclick] {
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent !important;
 }
